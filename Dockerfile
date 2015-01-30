@@ -1,10 +1,10 @@
-FROM sameersbn/ubuntu:12.04.20150120
-MAINTAINER sameer@damagehead.com
+FROM ubuntu:14.04
+MAINTAINER francis@ignition.hk
 
 RUN apt-get update \
  && apt-get install -y postgresql postgresql-client pwgen \
  && rm -rf /var/lib/postgresql \
- && rm -rf /var/lib/apt/lists/* # 20141001
+ && rm -rf /var/lib/apt/lists/*
 
 ADD start /start
 RUN chmod 755 /start
